@@ -33,7 +33,7 @@
       const [placeList, areaList, tallies] = await Promise.all([
         getJson('/data/places.json'),
         getJson('/data/areas.json'),
-        getJson('/api/tallies'),
+        getJson('/api/tallies').catch(() => ({})), // 투표 DB가 없어도 지도와 식당은 보여 준다
       ]);
       areas = areaList;
       for (const p of placeList) {
