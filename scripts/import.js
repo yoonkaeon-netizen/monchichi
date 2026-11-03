@@ -14,7 +14,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { extname } from 'node:path';
 
 const COLUMNS = {
-  id: ['id', 'placeid', 'naverid', 'place_id', '플레이스id', '아이디'],
+  id: ['id', 'placeid', 'naverid', 'place_id', '플레이스id', '네이버장소id', '장소id', '아이디'],
   name: ['name', 'title', 'place_name', '이름', '상호', '상호명', '식당명', '가게명'],
   category: ['category', 'type', '업종', '카테고리', '분류'],
   address: ['address', 'jibunaddress', 'address_name', '주소', '지번주소', '지번'],
@@ -47,6 +47,7 @@ async function importPlaces(file) {
   const seen = new Set();
   let geocoded = 0;
   const skipped = [];
+  const approx = [];
 
   for (const row of rows) {
     const p = Object.fromEntries(Object.entries(COLUMNS).map(([key, names]) => [key, pick(row, names)]));
@@ -57,7 +58,18 @@ async function importPlaces(file) {
     if (lat != null && lng != null && lat > 100) [lat, lng] = [lng, lat];
     if (lat == null || lng == null) {
       const query = p.roadAddress || p.address;
-      const hit = query ? await geocode(query, cache) : null;
+      // "… 동성로2길 12-32 1층 카페" 처럼 뒤에 붙은 층·상호는 엉뚱한 곳을 잡게 하므로 건물번호까지만 쓴다.
+      // 그래도 없으면 도로명(골목)만으로 찾아 대략적인 위치에 둔다.
+      const short = query?.match(/^.*?(?:로|길)\s*\d+(?:-\d+)?/)?.[0];
+      const street = query?.match(/^.*?(?:로|길)(?=\s*\d)/)?.[0];
+      let hit = null;
+      for (const q of new Set([short ?? query, street].filter(Boolean))) {
+        hit = await geocode(q, cache);
+        if (hit) {
+          if (q === street) approx.push(p.name);
+          break;
+        }
+      }
       if (hit) {
         [lat, lng] = hit;
         geocoded++;
@@ -84,10 +96,22 @@ async function importPlaces(file) {
     });
   }
 
+  // 같은 좌표에 겹친 곳은 마커를 누를 수 있게 둥글게 조금씩(약 10m) 벌려 놓는다.
+  const groups = Map.groupBy(places, (p) => `${p.lat},${p.lng}`);
+  for (const group of groups.values()) {
+    if (group.length < 2) continue;
+    group.forEach((p, i) => {
+      const angle = (2 * Math.PI * i) / group.length;
+      p.lat = round(p.lat + 0.00009 * Math.sin(angle));
+      p.lng = round(p.lng + 0.00011 * Math.cos(angle));
+    });
+  }
+
   mkdirSync(new URL('../.local/', import.meta.url), { recursive: true });
   writeFileSync(GEOCODE_CACHE, JSON.stringify(cache, null, 2));
   writeFileSync(new URL('places.json', OUT_DIR), JSON.stringify(places, null, 2));
   console.log(`식당 ${places.length}곳 저장 (주소로 좌표 찾음: ${geocoded}곳)`);
+  if (approx.length) console.warn(`번지를 못 찾아 도로 위치로 둔 식당 ${approx.length}곳: ${approx.join(', ')}`);
   if (skipped.length) console.warn(`좌표를 못 찾아 빠진 식당 ${skipped.length}곳: ${skipped.join(', ')}`);
 }
 
@@ -95,7 +119,8 @@ async function geocode(address, cache) {
   if (address in cache) return cache[address];
   await new Promise((r) => setTimeout(r, 1100)); // Nominatim 이용 규칙: 1초에 1건
   const url = new URL('https://nominatim.openstreetmap.org/search');
-  url.search = new URLSearchParams({ q: address, format: 'json', limit: '1', countrycodes: 'kr' });
+  // 대구 시내로 범위를 묶는다. 안 묶으면 같은 도로명이 있는 다른 도시로 잡히기도 한다.
+  url.search = new URLSearchParams({ q: address, format: 'json', limit: '1', countrycodes: 'kr', viewbox: '128.35,36.05,128.80,35.70', bounded: '1' });
   try {
     const res = await fetch(url, { headers: { 'User-Agent': 'beepay-map-import/0.2' } });
     const [hit] = res.ok ? await res.json() : [];
