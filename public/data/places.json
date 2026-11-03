@@ -1,0 +1,178 @@
+[
+  {
+    "id": "p_aa3d5a2cb0f9",
+    "name": "샘플식당 01",
+    "category": "한식",
+    "address": "",
+    "roadAddress": "샘플 주소 1",
+    "phone": "",
+    "url": "",
+    "lat": 35.8745,
+    "lng": 128.5956
+  },
+  {
+    "id": "p_2a333e04ec0b",
+    "name": "샘플식당 02",
+    "category": "분식",
+    "address": "",
+    "roadAddress": "샘플 주소 2",
+    "phone": "",
+    "url": "",
+    "lat": 35.8728,
+    "lng": 128.5951
+  },
+  {
+    "id": "p_222c6a7ccf4b",
+    "name": "샘플식당 03",
+    "category": "국밥",
+    "address": "",
+    "roadAddress": "샘플 주소 3",
+    "phone": "",
+    "url": "",
+    "lat": 35.8712,
+    "lng": 128.5945
+  },
+  {
+    "id": "p_fb1b2dab7301",
+    "name": "샘플식당 04",
+    "category": "카페",
+    "address": "",
+    "roadAddress": "샘플 주소 4",
+    "phone": "",
+    "url": "",
+    "lat": 35.8698,
+    "lng": 128.594
+  },
+  {
+    "id": "p_2ac71325695e",
+    "name": "샘플식당 05",
+    "category": "중식",
+    "address": "",
+    "roadAddress": "샘플 주소 5",
+    "phone": "",
+    "url": "",
+    "lat": 35.868,
+    "lng": 128.5936
+  },
+  {
+    "id": "p_3af6bc3f85c3",
+    "name": "샘플식당 06",
+    "category": "일식",
+    "address": "",
+    "roadAddress": "샘플 주소 6",
+    "phone": "",
+    "url": "",
+    "lat": 35.8664,
+    "lng": 128.5935
+  },
+  {
+    "id": "p_aaab75d6d730",
+    "name": "샘플식당 07",
+    "category": "치킨",
+    "address": "",
+    "roadAddress": "샘플 주소 7",
+    "phone": "",
+    "url": "",
+    "lat": 35.871,
+    "lng": 128.5965
+  },
+  {
+    "id": "p_8584e5bdc8fa",
+    "name": "샘플식당 08",
+    "category": "양식",
+    "address": "",
+    "roadAddress": "샘플 주소 8",
+    "phone": "",
+    "url": "",
+    "lat": 35.87,
+    "lng": 128.5972
+  },
+  {
+    "id": "p_61e8bcc2dc73",
+    "name": "샘플식당 09",
+    "category": "한식",
+    "address": "",
+    "roadAddress": "샘플 주소 9",
+    "phone": "",
+    "url": "",
+    "lat": 35.869,
+    "lng": 128.5978
+  },
+  {
+    "id": "p_25c08bef4cc2",
+    "name": "샘플식당 10",
+    "category": "분식",
+    "address": "",
+    "roadAddress": "샘플 주소 10",
+    "phone": "",
+    "url": "",
+    "lat": 35.8681,
+    "lng": 128.5966
+  },
+  {
+    "id": "p_c7429b14b932",
+    "name": "샘플식당 11",
+    "category": "국밥",
+    "address": "",
+    "roadAddress": "샘플 주소 11",
+    "phone": "",
+    "url": "",
+    "lat": 35.8715,
+    "lng": 128.598
+  },
+  {
+    "id": "p_32d8303d94f1",
+    "name": "샘플식당 12",
+    "category": "카페",
+    "address": "",
+    "roadAddress": "샘플 주소 12",
+    "phone": "",
+    "url": "",
+    "lat": 35.8712,
+    "lng": 128.5922
+  },
+  {
+    "id": "p_458c434fcb72",
+    "name": "샘플식당 13",
+    "category": "중식",
+    "address": "",
+    "roadAddress": "샘플 주소 13",
+    "phone": "",
+    "url": "",
+    "lat": 35.87,
+    "lng": 128.5928
+  },
+  {
+    "id": "p_7a809c77b473",
+    "name": "샘플식당 14",
+    "category": "일식",
+    "address": "",
+    "roadAddress": "샘플 주소 14",
+    "phone": "",
+    "url": "",
+    "lat": 35.869,
+    "lng": 128.5918
+  },
+  {
+    "id": "p_d6881d243ef1",
+    "name": "샘플식당 15",
+    "category": "치킨",
+    "address": "",
+    "roadAddress": "샘플 주소 15",
+    "phone": "",
+    "url": "",
+    "lat": 35.8748,
+    "lng": 128.5925
+  },
+  {
+    "id": "p_661576cc858a",
+    "name": "샘플식당 16",
+    "category": "양식",
+    "address": "",
+    "roadAddress": "샘플 주소 16",
+    "phone": "",
+    "url": "",
+    "lat": 35.874,
+    "lng": 128.5938
+  }
+]

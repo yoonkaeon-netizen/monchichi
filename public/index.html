@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>비플페이 지도 · 중앙로역</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>비플페이 지도 <small>대구 중앙로역 부근</small></h1>
+    <form id="search-form" class="search" autocomplete="off">
+      <input id="search-input" type="search" list="area-names" placeholder="도로명·동·지명 (예: 중앙로, 동성로, 남일동)" aria-label="구획 이름" required>
+      <datalist id="area-names"></datalist>
+      <button type="submit">검색</button>
+    </form>
+    <ul class="legend" aria-label="범례">
+      <li><span class="pin pin-yes"></span>비플페이 가능</li>
+      <li><span class="pin pin-no"></span>불가능</li>
+      <li><span class="pin pin-unknown"></span>미확인·동률</li>
+    </ul>
+  </header>
+
+  <main class="layout">
+    <div id="map"></div>
+    <aside class="panel">
+      <div class="panel-head">
+        <div id="status" class="status">불러오는 중…</div>
+        <button id="show-all" type="button" class="link" hidden>전체 보기</button>
+      </div>
+      <div id="area-chips" class="chips" aria-label="구획 바로가기"></div>
+      <div id="filters" class="filters">
+        <button type="button" data-filter="all" class="active">전체 <b data-count="all">0</b></button>
+        <button type="button" data-filter="yes">가능 <b data-count="yes">0</b></button>
+        <button type="button" data-filter="no">불가능 <b data-count="no">0</b></button>
+        <button type="button" data-filter="unknown">미확인 <b data-count="unknown">0</b></button>
+      </div>
+      <ol id="place-list" class="place-list"></ol>
+    </aside>
+  </main>
+
+  <dialog id="notice" class="notice">
+    <p id="notice-text"></p>
+    <form method="dialog"><button>확인</button></form>
+  </dialog>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

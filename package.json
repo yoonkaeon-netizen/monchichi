@@ -1,0 +1,17 @@
+{
+  "name": "beepay-map",
+  "version": "0.2.0",
+  "private": true,
+  "description": "대구 중앙로역 부근 식당의 비플페이 사용 가능 여부를 함께 표시하는 지도",
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env dev-server.js",
+    "import-data": "node scripts/import.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.4"
+  },
+  "engines": {
+    "node": ">=22.13"
+  }
+}
