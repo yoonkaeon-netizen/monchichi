@@ -6,3 +6,4 @@
 | 2 | IBK기업은행 보도자료 | IBK기업은행, 2026년 3분기 경영실적 발표 · 2026-11-04 | [sources/ibk기업은행_pr_20261104_3분기경영실적.md](sources/ibk기업은행_pr_20261104_3분기경영실적.md) |
 | 3 | IBK기업은행 보도자료 | IBK기업은행, 총 5000억 원 규모 KOFR 단기 유동성 지원자금 대출 출시 · 2026-11-04 | [sources/ibk기업은행_pr_20261104_KOFR대출출시.md](sources/ibk기업은행_pr_20261104_KOFR대출출시.md) |
 | 4 | IBK기업은행 보도자료 | IBK기업은행, 소상공인 금융 부담 완화 위해 1조 5000억 원 규모 금융지원 실시 · 2026-11-02 | [sources/ibk기업은행_pr_20261102_소상공인금융지원.md](sources/ibk기업은행_pr_20261102_소상공인금융지원.md) |
+| 5 | DART 공시 (분석 CSV) | IBK기업은행 최근 공시 10건 분석 · 2026-07-20~2026-10-26 | [sources/ibk_latest_10_disclosures_analysis.csv](sources/ibk_latest_10_disclosures_analysis.csv) |
