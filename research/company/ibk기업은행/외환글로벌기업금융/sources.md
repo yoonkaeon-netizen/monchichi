@@ -98,3 +98,5 @@
 | 128 | 기사 | 더구루 | 하나은행, 동남아 중심 글로벌 사업 확장…현지 파트너십 구축 박차 · 2026-08-02 | [sources/D_외부자료.md](sources/D_외부자료.md) |  |
 | 129 | 기사 | 스마트비즈 | 해외로 뻗던 은행들, 이제는 '몸집'보다 수익성···4대 은행 전략 전환 · 2026-09-16 | [sources/D_외부자료.md](sources/D_외부자료.md) |  |
 | 130 | 기사 | 스마트투데이 | 하나은행, 수탁 강자 입지 다졌다…유로머니 최우수 선정 · 2026-10-21 | [sources/D_외부자료.md](sources/D_외부자료.md) |  |
+| 131 | 공식 | IBK기업은행 보도자료 | IBK기업은행, '생산적금융 전담심사반' 운영 · 2026-03-17 (srno=107031) | [valuechain/evidence_check.md](../../../../valuechain/evidence_check.md) |  |
+| 132 | 공식 | IBK기업은행 보도자료 | IBK기업은행, AI 기반 '신(新)기술평가시스템' 가동 · 2026-03-23 (srno=107036) | [valuechain/evidence_check.md](../../../../valuechain/evidence_check.md) |  |
